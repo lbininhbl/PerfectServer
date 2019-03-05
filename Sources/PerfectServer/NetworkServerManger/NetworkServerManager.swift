@@ -22,6 +22,8 @@ open class NetworkServerManager {
         // 注册路由器
         configure(routes: &routes)
         
+        // 服务器名称
+        server.serverName = "Test"
         // 路由添加进服务
         server.addRoutes(routes)
         // 端口
@@ -47,11 +49,11 @@ open class NetworkServerManager {
     // MARK: - 注册路由
     private func configure(routes: inout Routes) {
         // 添加接口，请求方式，路径
-        routes.add(method: .get, uri: "/") { (request, response) in
+        routes.add(method: .get, uri: "/**") { (request, response) in
             // 响应头
-            response.setHeader(.contentType, value: "text/html")
+            response.setHeader(.contentType, value: "application/json, charset=utf-8")
             
-            let jsonDic = ["hello": "world"]
+            let jsonDic = ["hello": "world中"]
             
             let jsonString = self.baseResponseBodyJSONData(status: 200, message: "Success", data: jsonDic)
             
@@ -87,6 +89,7 @@ open class NetworkServerManager {
             if case .notFound = response.status {
                 response.setBody(string: "404 文件\(response.request.path) 不存在")
                 response.setHeader(.contentLength, value: "\(response.bodyBytes.count)")
+                response.setHeader(.contentType, value: "application/json, charset=utf-8")
                 callback(.done)
             } else {
                 callback(.continue)
