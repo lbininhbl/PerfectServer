@@ -61,6 +61,20 @@ open class NetworkServerManager {
             
             response.completed()
         }
+        
+        // 添加接口, home
+        routes.add(method: .get, uri: "/home") { (request, response) in
+            
+            response.setHeader(.contentType, value: "application/json, charset=utf-8")
+            
+            let result = DataBaseManager().getAllDataBaseDataResult()
+            let jsonString = self.baseResponseBodyJSONData(status: 200, message: "Success", data: result)
+            
+            response.setBody(string: jsonString)
+            
+            response.completed()
+        }
+        
     }
     
     // MARK: - 通用响应格式

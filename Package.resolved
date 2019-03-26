@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "PerfectCRUD",
+        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-CRUD.git",
+        "state": {
+          "branch": null,
+          "revision": "2fffbdc4d9c33e6c980a51768abe7d9f6d9bbac0",
+          "version": "1.2.2"
+        }
+      },
+      {
         "package": "PerfectCrypto",
         "repositoryURL": "https://github.com/PerfectlySoft/Perfect-Crypto.git",
         "state": {
@@ -44,6 +53,24 @@
           "branch": null,
           "revision": "49981001cd6ac7c9e19ea06e3a94a58e8b2b3f98",
           "version": "3.0.19"
+        }
+      },
+      {
+        "package": "PerfectMySQL",
+        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-MySQL.git",
+        "state": {
+          "branch": null,
+          "revision": "f9af3a9984aa4785fcbe7126eaf0bc39320296ec",
+          "version": "3.4.1"
+        }
+      },
+      {
+        "package": "mysqlclient",
+        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-mysqlclient.git",
+        "state": {
+          "branch": null,
+          "revision": "afec636bfa3302ea155f462f139da46a53fd351a",
+          "version": "2.1.0"
         }
       },
       {
